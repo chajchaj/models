@@ -4,10 +4,9 @@ PaddleCV 是基于 PaddlePaddle 深度学习框架开发的智能视觉工具，
 
 PaddleCV全景图：
 
-![paddlecv](./imgs/paddlecv.gif)
+![paddlecv](./imgs/paddlecv.png)
 
 
-![ball](./imgs/ball1.gif)
 
 图像分类
 --------
