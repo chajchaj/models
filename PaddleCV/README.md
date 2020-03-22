@@ -1,12 +1,18 @@
 PaddleCV
 ========
+PaddleCV 是基于 PaddlePaddle 深度学习框架开发的智能视觉工具，算法，模型和数据的开源项目。百度在 CV 领域多年的深厚积淀为 PaddleCV 提供了强大的核心动力。PaddleCV集成了丰富的CV模型，涵盖图像分类，目标检测，图像分割，视频分类，动作定位，目标跟踪，图像生成，文字识别，度量学习，关键点检测，3D视觉等 CV 技术。同时，PaddleCV 还提供了实用的工具，PLSC支持超大规模分类，PaddleSlim和PaddleLite支持工业级部署，以及 PaddleDetection、PaddleSeg面向产业的端到端开发套件，打通了模型开发、压缩、部署全流程。
+PaddleCV全景图：
+
+![paddlecv](./imgs/paddlecv.png)
+
 
 图像分类
 --------
 
 图像分类是根据图像的语义信息对不同类别图像进行区分，是计算机视觉中重要的基础问题，是物体检测、图像分割、物体跟踪、行为分析、人脸识别等其他高层视觉任务的基础，在许多领域都有着广泛的应用。如：安防领域的人脸识别和智能视频分析等，交通领域的交通场景识别，互联网领域基于内容的图像检索和相册自动归类，医学领域的图像识别等。
 
-在深度学习时代，图像分类的准确率大幅度提升，在图像分类任务中，我们向大家介绍了如何在经典的数据集ImageNet上，训练常用的模型，包括AlexNet、VGG、ResNet、ResNeXt、Inception、MobileNet、SENet、DarkNet、SqueezeNet、ShuffleNet、Res2Net、DenseNet、DPN、EfficientNet、HRNet、AutoDL、ResNet-ACNet等系列模型，也开源了共105个[预训练模型](https://github.com/PaddlePaddle/models/blob/develop/PaddleCV/image_classification/README.md#已发布模型及其性能)方便用户下载使用。
+在深度学习时代，图像分类的准确率大幅度提升，在图像分类任务中，我们向大家介绍了如何在经典的数据集ImageNet上，训练常用的模型，包括AlexNet、VGG系列、ResNet系列、ResNeXt系列、Inception系列、MobileNet系列、SENet系列、DarkNet、SqueezeNet、ShuffleNet系列等模型，也开源了[训练的模型](https://github.com/PaddlePaddle/models/blob/develop/PaddleCV/image_classification/README.md#已有模型及其性能) 方便用户下载使用。同时提供了能够将Caffe模型转换为PaddlePaddle
+Fluid模型配置和参数文件的工具。
 
 -  [AlexNet](https://github.com/PaddlePaddle/models/tree/develop/PaddleCV/image_classification/models)
 -  [SqueezeNet](https://github.com/PaddlePaddle/models/tree/develop/PaddleCV/image_classification/models)
@@ -21,14 +27,7 @@ PaddleCV
 -  [SENet Series](https://github.com/PaddlePaddle/models/tree/develop/PaddleCV/image_classification/models)
 -  [DarkNet](https://github.com/PaddlePaddle/models/tree/develop/PaddleCV/image_classification/models)
 -  [ResNeXt101_wsl Series](https://github.com/PaddlePaddle/models/tree/develop/PaddleCV/image_classification/models)
--  [Res2Net Series](https://github.com/PaddlePaddle/models/tree/develop/PaddleCV/image_classification/models)
--  [DenseNet Series](https://github.com/PaddlePaddle/models/tree/develop/PaddleCV/image_classification/models)
--  [DPN Series](https://github.com/PaddlePaddle/models/tree/develop/PaddleCV/image_classification/models)
--  [EfficientNet Series](https://github.com/PaddlePaddle/models/tree/develop/PaddleCV/image_classification/models)
--  [HRNet Series](https://github.com/PaddlePaddle/models/tree/develop/PaddleCV/image_classification/models)
--  [AutoDL Series](https://github.com/PaddlePaddle/models/tree/develop/PaddleCV/image_classification/models)
--  [ResNet-ACNet Series](https://github.com/PaddlePaddle/models/tree/develop/PaddleCV/image_classification/models)
-
+-  [Caffe模型转换为Paddle Fluid配置和模型文件工具](https://github.com/PaddlePaddle/models/tree/develop/PaddleCV/caffe2fluid)
 
 目标检测
 --------
@@ -43,10 +42,10 @@ Faster RCNN模型是典型的两阶段目标检测器，相较于传统提取区
 
 Mask RCNN模型是基于Faster RCNN模型的经典实例分割模型，在原有Faster RCNN模型基础上添加分割分支，得到掩码结果，实现了掩码和类别预测关系的解藕。
 
--  [Single Shot MultiBox Detector](https://github.com/PaddlePaddle/PaddleDetection)
--  [Face Detector: PyramidBox](https://github.com/PaddlePaddle/models/tree/release/1.7/PaddleCV/face_detection/README_cn.md)
--  [Faster RCNN](https://github.com/PaddlePaddle/PaddleDetection)
--  [Mask RCNN](https://github.com/PaddlePaddle/PaddleDetection)
+-  [Single Shot MultiBox Detector](https://github.com/PaddlePaddle/models/blob/develop/PaddleCV/ssd/README_cn.md)
+-  [Face Detector: PyramidBox](https://github.com/PaddlePaddle/models/tree/develop/PaddleCV/face_detection/README_cn.md)
+-  [Faster RCNN](https://github.com/PaddlePaddle/models/tree/develop/PaddleCV/rcnn/README_cn.md)
+-  [Mask RCNN](https://github.com/PaddlePaddle/models/tree/develop/PaddleCV/rcnn/README_cn.md)
 
 图像语义分割
 ------------
@@ -56,7 +55,7 @@ Mask RCNN模型是基于Faster RCNN模型的经典实例分割模型，在原有
 在图像语义分割任务中，我们介绍如何基于图像级联网络(Image Cascade
 Network,ICNet)进行语义分割，相比其他分割算法，ICNet兼顾了准确率和速度。
 
--  [ICNet](https://github.com/PaddlePaddle/PaddleSeg)
+-  [ICNet](https://github.com/PaddlePaddle/models/tree/develop/PaddleCV/icnet)
 
 图像生成
 -----------
@@ -66,8 +65,8 @@ Network,ICNet)进行语义分割，相比其他分割算法，ICNet兼顾了准�
 
 在图像生成任务中，我们介绍了如何使用DCGAN和ConditioanlGAN来进行手写数字的生成，另外还介绍了用于风格迁移的CycleGAN.
 
-- [DCGAN & ConditionalGAN](https://github.com/PaddlePaddle/models/tree/release/1.7/PaddleCV/gan/c_gan)
-- [CycleGAN](https://github.com/PaddlePaddle/models/tree/release/1.7/PaddleCV/gan/cycle_gan)
+- [DCGAN & ConditionalGAN](https://github.com/PaddlePaddle/models/tree/develop/PaddleCV/PaddleGAN/c_gan)
+- [CycleGAN](https://github.com/PaddlePaddle/models/tree/develop/PaddleCV/PaddleGAN/cycle_gan)
 
 场景文字识别
 ------------
@@ -76,8 +75,8 @@ Network,ICNet)进行语义分割，相比其他分割算法，ICNet兼顾了准�
 
 在场景文字识别任务中，我们介绍如何将基于CNN的图像特征提取和基于RNN的序列翻译技术结合，免除人工定义特征，避免字符分割，使用自动学习到的图像特征，完成字符识别。当前，介绍了CRNN-CTC模型和基于注意力机制的序列到序列模型。
 
--  [CRNN-CTC模型](https://github.com/PaddlePaddle/models/tree/release/1.7/PaddleCV/ocr_recognition)
--  [Attention模型](https://github.com/PaddlePaddle/models/tree/release/1.7/PaddleCV/ocr_recognition)
+-  [CRNN-CTC模型](https://github.com/PaddlePaddle/models/tree/develop/PaddleCV/ocr_recognition)
+-  [Attention模型](https://github.com/PaddlePaddle/models/tree/develop/PaddleCV/ocr_recognition)
 
 
 度量学习
@@ -86,7 +85,7 @@ Network,ICNet)进行语义分割，相比其他分割算法，ICNet兼顾了准�
 
 度量学习也称作距离度量学习、相似度学习，通过学习对象之间的距离，度量学习能够用于分析对象时间的关联、比较关系，在实际问题中应用较为广泛，可应用于辅助分类、聚类问题，也广泛用于图像检索、人脸识别等领域。以往，针对不同的任务，需要选择合适的特征并手动构建距离函数，而度量学习可根据不同的任务来自主学习出针对特定任务的度量距离函数。度量学习和深度学习的结合，在人脸识别/验证、行人再识别(human Re-ID)、图像检索等领域均取得较好的性能，在这个任务中我们主要介绍了基于Fluid的深度度量学习模型，包含了三元组、四元组等损失函数。
 
-- [Metric Learning](https://github.com/PaddlePaddle/models/tree/release/1.7/PaddleCV/metric_learning)
+- [Metric Learning](https://github.com/PaddlePaddle/models/tree/develop/PaddleCV/metric_learning)
 
 
 视频分类
@@ -95,4 +94,26 @@ Network,ICNet)进行语义分割，相比其他分割算法，ICNet兼顾了准�
 视频分类是视频理解任务的基础，与图像分类不同的是，分类的对象不再是静止的图像，而是一个由多帧图像构成的、包含语音数据、包含运动信息等的视频对象，因此理解视频需要获得更多的上下文信息，不仅要理解每帧图像是什么、包含什么，还需要结合不同帧，知道上下文的关联信息。视频分类方法主要包含基于卷积神经网络、基于循环神经网络、或将这两者结合的方法。该任务中我们介绍基于Fluid的视频分类模型，目前包含Temporal Segment Network(TSN)模型，后续会持续增加更多模型。
 
 
-- [TSN](https://github.com/PaddlePaddle/models/tree/release/1.7/PaddleCV/video)
+- [TSN](https://github.com/PaddlePaddle/models/tree/develop/PaddleCV/video_classification)
+### 视频
+
+视频方向, PaddleCV全面开源了视频分类、动作定位 和 目标跟踪等任务的领先实用算法。视频数据包含语音、图像等多种信息，因此理解视频任务不仅需要处理语音和图像，还需要提取视频帧时间序列中的上下文信息。视频分类模型提供了提取全局时序特征的方法，主要方式有卷积神经网络 (C3D, I3D, C2D等)，神经网络和传统图像算法结合 (VLAD 等)，循环神经网络等建模方法。视频动作定位模型需要同时识别视频动作的类别和起止时间点，通常采用类似于图像目标检测中的算法在时间维度上进行建模。视频摘要生成模型是对视频画面信息进行提取，并产生一段文字描述。视频查找模型则是基于一段文字描述，查找到视频中对应场景片段的起止时间点。这两类模型需要同时对视频图像和文本信息进行建模。目标跟踪需要识别出视频帧中的目标物体所在区域及其随时间变化的情况，其做法一般是寻找跟初始化区域相似度最大的目标区域，以获得连续多帧画面中的最佳匹配区域。
+
+| 模型名称                                                     | 模型简介                                                     | 数据集                     | 评估指标    |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | -------------------------- | ----------- |
+| [TSN](https://github.com/PaddlePaddle/models/tree/develop/PaddleCV/PaddleVideo) | ECCV'16 提出的基于 2D-CNN 经典解决方案 | Kinetics-400               | Top-1 = 67% |
+| [Non-Local](https://github.com/PaddlePaddle/models/tree/develop/PaddleCV/PaddleVideo) | 视频非局部关联建模模型 | Kinetics-400               | Top-1 = 74% |
+| [StNet](https://github.com/PaddlePaddle/models/tree/develop/PaddleCV/PaddleVideo) | AAAI'19 提出的视频联合时空建模方法 | Kinetics-400               | Top-1 = 69% |
+| [TSM](https://github.com/PaddlePaddle/models/tree/develop/PaddleCV/PaddleVideo) | 基于时序移位的简单高效视频时空建模方法 | Kinetics-400               | Top-1 = 70% |
+| [Attention   LSTM](https://github.com/PaddlePaddle/models/tree/develop/PaddleCV/PaddleVideo) | 常用模型，速度快精度高 | Youtube-8M                 | GAP   = 86% |
+| [Attention   Cluster](https://github.com/PaddlePaddle/models/tree/develop/PaddleCV/PaddleVideo) | CVPR'18 提出的视频多模态特征注意力聚簇融合方法 | Youtube-8M                 | GAP   = 84% |
+| [NeXtVlad](https://github.com/PaddlePaddle/models/tree/develop/PaddleCV/PaddleVideo) | 2nd-Youtube-8M 比赛第 3 名的模型 | Youtube-8M                 | GAP   = 87% |
+| [C-TCN](https://github.com/PaddlePaddle/models/tree/develop/PaddleCV/PaddleVideo) | 2018 年 ActivityNet 夺冠方案 | ActivityNet1.3 | MAP=31%    |
+| [BSN](https://github.com/PaddlePaddle/models/tree/develop/PaddleCV/PaddleVideo) | 为视频动作定位问题提供高效的 proposal 生成方法 | ActivityNet1.3 | AUC=66.64%    |
+| [BMN](https://github.com/PaddlePaddle/models/tree/develop/PaddleCV/PaddleVideo) | 2019 年 ActivityNet 夺冠方案 | ActivityNet1.3 | AUC=67.19%    |
+| [ETS](https://github.com/PaddlePaddle/models/tree/develop/PaddleCV/PaddleVideo/models/ets) | 视频摘要生成领域的基准模型 | ActivityNet Captions | METEOR：10.0 |
+| [TALL](https://github.com/PaddlePaddle/models/tree/develop/PaddleCV/PaddleVideo/models/tall) | 视频Grounding方向的BaseLine模型 | TACoS | R1@IOU5=0.13 |
+| [SiamFC](https://github.com/PaddlePaddle/models/tree/develop/PaddleCV/tracking) | ECCV’16提出的全卷积神经网络视频跟踪模型 | VOT2018 | EAO = 0.211 |
+| [ATOM](https://github.com/PaddlePaddle/models/tree/develop/PaddleCV/tracking) | CVPR’19提出的两阶段目标跟踪模型 | VOT2018 | EAO = 0.399 |
+
+
