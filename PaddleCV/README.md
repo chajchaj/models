@@ -1,10 +1,13 @@
 PaddleCV
 ========
 PaddleCV 是基于 PaddlePaddle 深度学习框架开发的智能视觉工具，算法，模型和数据的开源项目。百度在 CV 领域多年的深厚积淀为 PaddleCV 提供了强大的核心动力。PaddleCV集成了丰富的CV模型，涵盖图像分类，目标检测，图像分割，视频分类，动作定位，目标跟踪，图像生成，文字识别，度量学习，关键点检测，3D视觉等 CV 技术。同时，PaddleCV 还提供了实用的工具，PLSC支持超大规模分类，PaddleSlim和PaddleLite支持工业级部署，以及 PaddleDetection、PaddleSeg面向产业的端到端开发套件，打通了模型开发、压缩、部署全流程。
+
 PaddleCV全景图：
 
 ![paddlecv](./imgs/paddlecv.png)
 
+
+![ball](./imgs/ball1.gif)
 
 图像分类
 --------
@@ -115,5 +118,3 @@ Network,ICNet)进行语义分割，相比其他分割算法，ICNet兼顾了准�
 | [TALL](https://github.com/PaddlePaddle/models/tree/develop/PaddleCV/PaddleVideo/models/tall) | 视频Grounding方向的BaseLine模型 | TACoS | R1@IOU5=0.13 |
 | [SiamFC](https://github.com/PaddlePaddle/models/tree/develop/PaddleCV/tracking) | ECCV’16提出的全卷积神经网络视频跟踪模型 | VOT2018 | EAO = 0.211 |
 | [ATOM](https://github.com/PaddlePaddle/models/tree/develop/PaddleCV/tracking) | CVPR’19提出的两阶段目标跟踪模型 | VOT2018 | EAO = 0.399 |
-
-
